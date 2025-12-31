@@ -1,0 +1,4 @@
+
+User-agent: *
+Allow: /
+Sitemap: https://formacion-estetica-metabolica.netlify.app/sitemap.xml

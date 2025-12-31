@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estética Metabólica | Medicina Metabólica y Funcional aplicada</title>
+    <meta name="description" content="Integra el eje metabólico–neuroinmune–redox para mejorar la consistencia de resultados en medicina estética. Formación basada en evidencia para profesionales de la salud.">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://formacion-estetica-metabolica.netlify.app/">
+    <meta property="og:title" content="Estética Metabólica | Medicina Metabólica y Funcional">
+    <meta property="og:description" content="Evidencia y transferencia clínica inmediata para médicos y profesionales de la estética avanzada.">
+    <meta property="og:image" content="https://picsum.photos/seed/med1/1200/630">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Estética Metabólica | Medicina Metabólica y Funcional">
+    <meta property="twitter:description" content="Integra el eje metabólico–neuroinmune–redox para mejorar la consistencia de resultados.">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                primary: '#1e3a8a', // Deep Blue
+                secondary: '#334155', // Slate
+                accent: '#0369a1' // Sky Blue
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      .scroll-mt-header { scroll-margin-top: 5rem; }
+      @media (prefers-reduced-motion: no-preference) {
+        html { scroll-behavior: smooth; }
+      }
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .medical-grid {
+        background-image: radial-gradient(#cbd5e1 0.5px, transparent 0.5px);
+        background-size: 24px 24px;
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0"
+  }
+}
+</script>
+</head>
+<body class="bg-white text-slate-900 font-sans selection:bg-brand-primary/10">
+    <div id="root"></div>
+
+    <!-- Netlify Forms Hidden Support -->
+    <form name="lead" data-netlify="true" netlify-honeypot="bot-field" hidden>
+        <input type="text" name="nombre">
+        <input type="text" name="apellido">
+        <input type="email" name="email">
+        <input type="text" name="pais">
+        <input type="text" name="especialidad">
+        <textarea name="mensaje"></textarea>
+        <input type="checkbox" name="novedades">
+        <input type="hidden" name="form-name" value="lead">
+    </form>
+</body>
+</html>
