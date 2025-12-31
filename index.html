@@ -18,7 +18,7 @@
     <meta property="og:description" content="Evidencia y transferencia clínica inmediata para médicos y profesionales de la estética avanzada.">
     <meta property="og:image" content="https://picsum.photos/seed/med1/1200/630">
 
-    <!-- Tailwind CDN (Opcional, pero se recomienda configurar vía PostCSS en el futuro) -->
+    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -47,10 +47,16 @@
       body {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        margin: 0;
       }
       .medical-grid {
         background-image: radial-gradient(#cbd5e1 0.5px, transparent 0.5px);
         background-size: 24px 24px;
+      }
+      #root {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
       }
     </style>
 <script type="importmap">
@@ -69,7 +75,7 @@
 <body class="bg-white text-slate-900 font-sans selection:bg-brand-primary/10">
     <div id="root"></div>
 
-    <!-- Vite detectará este archivo y lo compilará automáticamente -->
+    <!-- Vite procesará este archivo y generará el bundle de producción -->
     <script type="module" src="/index.tsx"></script>
 
     <!-- Netlify Forms Support -->
