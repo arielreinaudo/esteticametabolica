@@ -18,12 +18,7 @@
     <meta property="og:description" content="Evidencia y transferencia clínica inmediata para médicos y profesionales de la estética avanzada.">
     <meta property="og:image" content="https://picsum.photos/seed/med1/1200/630">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Estética Metabólica | Medicina Metabólica y Funcional">
-    <meta property="twitter:description" content="Integra el eje metabólico–neuroinmune–redox para mejorar la consistencia de resultados.">
-
-    <!-- Tailwind CDN -->
+    <!-- Tailwind CDN (Opcional, pero se recomienda configurar vía PostCSS en el futuro) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -34,9 +29,9 @@
             },
             colors: {
               brand: {
-                primary: '#1e3a8a', // Deep Blue
-                secondary: '#334155', // Slate
-                accent: '#0369a1' // Sky Blue
+                primary: '#1e3a8a',
+                secondary: '#334155',
+                accent: '#0369a1'
               }
             }
           }
@@ -63,8 +58,10 @@
   "imports": {
     "react": "https://esm.sh/react@^19.2.3",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0",
     "react/": "https://esm.sh/react@^19.2.3/",
-    "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0"
+    "vite": "https://esm.sh/vite@^7.3.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
   }
 }
 </script>
@@ -72,10 +69,10 @@
 <body class="bg-white text-slate-900 font-sans selection:bg-brand-primary/10">
     <div id="root"></div>
 
-    <!-- Carga del módulo principal de React -->
-    <script type="module" src="./index.tsx"></script>
+    <!-- Vite detectará este archivo y lo compilará automáticamente -->
+    <script type="module" src="/index.tsx"></script>
 
-    <!-- Netlify Forms Hidden Support -->
+    <!-- Netlify Forms Support -->
     <form name="lead" data-netlify="true" netlify-honeypot="bot-field" hidden>
         <input type="text" name="nombre">
         <input type="text" name="apellido">
