@@ -1,59 +1,136 @@
 
 import React from 'react';
-import { trackEvent } from '../services/tracking';
-import { CONFIG } from '../constants';
 
-const modules = [
+interface Module {
+  number: number;
+  title: string;
+  objective: string;
+  items: string[];
+}
+
+const modules: Module[] = [
   {
-    title: "Módulo 1: Fundamentos de Estética Funcional",
-    items: ["Bases de Epigenética aplicada", "Mecanismos de Inflamm-aging", "Homeostasis redox dérmica"]
+    number: 1,
+    title: "Fundamentos de Estética Funcional, Epigenética e “Inflamm-aging”",
+    objective: "Comprender la piel como órgano diana de procesos metabólicos y epigenéticos.",
+    items: ["Paradigma funcional", "Ejes sistémicos (endocrino-metabólico, neuro-inmune, redox)", "Epigenética del envejecimiento cutáneo", "Inflamm-aging"]
   },
   {
-    title: "Módulo 2: Diagnóstico Funcional Avanzado",
-    items: ["Historia clínica orientada a metabolismo", "Laboratorio mínimo viable", "Protocolo de Semáforos clínicos"]
+    number: 2,
+    title: "Eje Metabólico-Cutáneo: Insulina, IGF-1, mTOR y Glicación (AGEs)",
+    objective: "Relacionar resistencia a la insulina, IGF-1 y mTOR con acné, fotoenvejecimiento y laxitud.",
+    items: ["Carga/índice glucémico", "AGEs dietarios y por técnicas de cocción", "Colágeno/elastina", "Matriz extracelular"]
   },
   {
-    title: "Módulo 3: Protocolos de Intervención",
-    items: ["Periodización de tratamientos", "Suplementación pre y post-quirúrgica", "Seguridad y KPIs de éxito"]
+    number: 3,
+    title: "Microbiota-Piel y Eje Intestino-Cerebro-Piel",
+    objective: "Integrar disbiosis, permeabilidad intestinal y neuroinflamación con acné, rosácea y dermatitis.",
+    items: ["Patrones clínicos de disbiosis", "Triggers dietarios", "Probióticos/prebióticos", "Herramientas de cribado"]
+  },
+  {
+    number: 4,
+    title: "Estrés Oxidativo, Mitocondria y Redox en Envejecimiento Cutáneo",
+    objective: "Optimizar bioenergética y defensa antioxidante para sostener reparación tisular.",
+    items: ["Sistemas Nrf2/Keap1", "Glutatión, CoQ10, ALA, polifenoles", "Relación con fotodaño", "Cicatrización"]
+  },
+  {
+    number: 5,
+    title: "Endocrinología Estética Clínica",
+    objective: "Reconocer el impacto de HPA (cortisol), tiroides y esteroideas sexuales en piel y cabello.",
+    items: ["Lectura clínica de analíticas funcionales", "Criterios y límites", "PCOS", "Perimenopausia/menopausia"]
+  },
+  {
+    number: 6,
+    title: "Evaluación Funcional Mínimo Viable y Seguridad",
+    objective: "Definir el set de laboratorio e historia clínica necesarios para decisiones estéticas seguras.",
+    items: ["Glucemia/insulina (HOMA-IR)", "Perfil lipídico, Vitamina D, Ferritina", "Fármacos/suplementos de riesgo", "Documentación técnica"]
+  },
+  {
+    number: 7,
+    title: "Nutrición Clínica Estética y Suplementación",
+    objective: "Traducir evidencia en planes concretos que mejoren textura, firmeza y fotoprotección.",
+    items: ["Proteína y aminoácidos", "Omega-3 selectivo", "Colágeno oral (tipos y dosis)", "Fotoprotección sistémica selectiva"]
+  },
+  {
+    number: 8,
+    title: "Protocolos: Acné Adulto y Rosácea",
+    objective: "Implementar rutas terapéuticas integradas y medibles.",
+    items: ["Acné con/sin IR o PCOS", "Lácteos y carga glucémica", "Rosácea flushing-dominante", "Coordinación dermatológica"]
+  },
+  {
+    number: 9,
+    title: "Protocolos: Hiperpigmentación y Fotoenvejecimiento",
+    objective: "Sinergizar fotoprotección, antioxidantes y energía con tópicos/procedimientos.",
+    items: ["Prevención de PIH", "Manejo del estrés oxidativo", "Control de AGEs", "Coordinación con láser/peelings"]
+  },
+  {
+    number: 10,
+    title: "Protocolos: Celulitis, Composición y Alopecias",
+    objective: "Alinear metabolismo, microcirculación y tejido conectivo; sostener anágena.",
+    items: ["Relación con síndrome metabólico", "Soporte proteico-micronutricional", "Ferritina y Vitamina D en efluvios", "AGA-FPHL"]
+  },
+  {
+    number: 11,
+    title: "Prehabilitación y Recuperación Peri-Procedimiento",
+    objective: "Reducir edema, dolor, riesgo de PIH y optimizar neocolagénesis.",
+    items: ["Hidratación y proteína", "Vitamina C y Zinc peri-quirúrgico", "Suspensión de fármacos de riesgo", "Educación del paciente"]
+  },
+  {
+    number: 12,
+    title: "Implementación, KPIs y Auditoría de Resultados",
+    objective: "Asegurar transferibilidad y calidad asistencial en la práctica diaria.",
+    items: ["Flujos de trabajo", "Registro fotográfico estandarizado", "Métricas clínicas/estéticas", "Comunicación interprofesional"]
   }
 ];
 
 const Syllabus: React.FC = () => {
   return (
-    <section id="contenido" className="py-20 bg-slate-50 scroll-mt-header">
+    <section id="contenido" className="py-24 bg-slate-50 scroll-mt-header">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-slate-900">Programa Académico</h2>
-          <p className="mt-4 text-slate-600 max-w-2xl mx-auto">Una estructura progresiva diseñada para el dominio de la medicina metabólica en estética.</p>
+        <div className="text-center mb-20">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Programa Académico Integral</h2>
+          <div className="w-20 h-1.5 bg-brand-primary mx-auto mt-6 rounded-full"></div>
+          <p className="mt-8 text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed font-medium">
+            Una estructura de 12 módulos diseñada para el dominio profundo de la medicina metabólica aplicada a la estética clínica avanzada.
+          </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8">
-          {modules.map((mod, idx) => (
-            <div key={idx} className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-              <h3 className="text-lg font-bold text-brand-primary mb-4">{mod.title}</h3>
-              <ul className="space-y-3">
-                {mod.items.map((item, i) => (
-                  <li key={i} className="text-sm text-slate-600 flex items-center">
-                    <span className="w-1.5 h-1.5 bg-brand-accent rounded-full mr-3"></span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {modules.map((mod) => (
+            <div key={mod.number} className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col">
+              <div className="flex items-center justify-between mb-6">
+                <span className="text-[10px] font-black uppercase tracking-widest text-brand-primary/40 bg-brand-primary/5 px-3 py-1 rounded-full">
+                  Módulo {mod.number.toString().padStart(2, '0')}
+                </span>
+                <div className="w-2 h-2 rounded-full bg-brand-accent/30"></div>
+              </div>
+              
+              <h3 className="text-xl font-bold text-slate-900 mb-4 leading-tight group-hover:text-brand-primary transition-colors">
+                {mod.title}
+              </h3>
+              
+              <div className="mb-6 p-4 bg-slate-50 rounded-xl border-l-4 border-brand-accent/20">
+                <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Objetivo:</p>
+                <p className="text-sm text-slate-700 font-medium leading-relaxed italic">
+                  "{mod.objective}"
+                </p>
+              </div>
+
+              <div className="mt-auto">
+                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3 border-b border-slate-100 pb-2">Contenidos Clave:</p>
+                <ul className="space-y-2.5">
+                  {mod.items.map((item, i) => (
+                    <li key={i} className="text-sm text-slate-600 flex items-start">
+                      <svg className="w-4 h-4 mr-2.5 text-brand-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 12l2 2 4-4" />
+                      </svg>
+                      <span className="leading-tight">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
-        </div>
-
-        <div className="mt-12 text-center">
-          <button
-            onClick={() => {
-              trackEvent('bonus_download', { file: 'full_syllabus' });
-              window.open(CONFIG.PROGRAM_PDF_URL, '_blank');
-            }}
-            className="inline-flex items-center px-6 py-3 border border-brand-primary text-brand-primary font-medium rounded-md hover:bg-brand-primary hover:text-white transition-all"
-          >
-            Ver programa completo (PDF)
-            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-          </button>
         </div>
       </div>
     </section>
