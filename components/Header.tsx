@@ -1,12 +1,35 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { NAVIGATION, CONFIG } from '../constants';
 import { trackEvent } from '../services/tracking';
 
 const Header: React.FC = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const handleEnrollClick = () => {
     trackEvent('cta_header_click', { type: 'enroll' });
+  };
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // Solo manejamos enlaces internos que empiezan con #
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const id = href.substring(1);
+      
+      if (location.pathname !== '/') {
+        // Si estamos en una página legal, navegamos al inicio conservando el hash
+        navigate('/' + href);
+      } else {
+        // Si ya estamos en el inicio, buscamos el elemento y hacemos scroll
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+          trackEvent('nav_click', { section: id });
+        }
+      }
+    }
   };
 
   return (
@@ -27,7 +50,8 @@ const Header: React.FC = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-slate-600 hover:text-brand-primary transition-colors"
+                onClick={(e) => handleNavClick(e, item.href)}
+                className="text-sm font-medium text-slate-600 hover:text-brand-primary transition-colors cursor-pointer"
               >
                 {item.name}
               </a>

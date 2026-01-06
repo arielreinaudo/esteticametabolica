@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -18,7 +18,6 @@ import Footer from './components/Footer';
 import CookieBanner from './components/CookieBanner';
 import PrivacyPolicy from './legal/PrivacyPolicy';
 import TermsConditions from './legal/TermsConditions';
-import { trackEvent } from './services/tracking';
 
 const MainLanding: React.FC = () => {
   return (
@@ -43,8 +42,17 @@ const App: React.FC = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Basic tracking on mount
-    console.log(`Page view: ${location.pathname}`);
+    // Si la URL contiene un hash (ej. #precios), hacemos scroll al elemento correspondiente
+    if (location.hash) {
+      const id = location.hash.substring(1);
+      // Pequeño timeout para asegurar que el DOM ha terminado de renderizar las secciones
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 150);
+    }
   }, [location]);
 
   return (
