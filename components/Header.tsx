@@ -2,8 +2,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { NAVIGATION, CONFIG } from '../constants';
+import { trackEvent } from '../services/tracking';
 
 const Header: React.FC = () => {
+  const handleEnrollClick = () => {
+    trackEvent('cta_header_click', { type: 'enroll' });
+  };
+
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -30,7 +35,8 @@ const Header: React.FC = () => {
           </nav>
           <div className="flex-shrink-0 flex items-center">
             <a
-              href="#inscripcion"
+              href={CONFIG.PAYMENT_URL_PRIMARY}
+              onClick={handleEnrollClick}
               className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 border border-transparent text-xs sm:text-sm font-medium rounded-md shadow-sm text-white bg-brand-primary hover:bg-brand-accent focus:outline-none transition-all whitespace-nowrap"
             >
               Inscribirme

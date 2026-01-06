@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     question: "¿Aceptan pagos internacionales?",
-    answer: "Sí, procesamos pagos vía Stripe, aceptando la mayoría de tarjetas de crédito y débito internacionales."
+    answer: "Sí, procesamos pagos vía PayPal, aceptando la mayoría de tarjetas de crédito y débito internacionales, además de saldo en cuenta PayPal."
   },
   {
     question: "¿El material es descargable?",

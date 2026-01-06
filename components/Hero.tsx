@@ -6,12 +6,15 @@ import { CONFIG } from '../constants';
 const Hero: React.FC = () => {
   const handlePrimaryClick = () => {
     trackEvent('cta_hero_click', { type: 'enroll' });
-    window.location.hash = 'precios';
+    window.location.href = CONFIG.PAYMENT_URL_PRIMARY;
   };
 
   const handleSecondaryClick = () => {
-    trackEvent('cta_hero_click', { type: 'download_program' });
-    window.open(CONFIG.PROGRAM_PDF_URL, '_blank');
+    trackEvent('cta_hero_click', { type: 'view_syllabus' });
+    const element = document.getElementById('contenido');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -41,23 +44,8 @@ const Hero: React.FC = () => {
               onClick={handleSecondaryClick}
               className="inline-flex items-center justify-center px-8 py-4 border border-slate-200 text-base font-bold rounded-lg text-slate-700 bg-white hover:bg-slate-50 transition-all duration-300"
             >
-              Descargar programa
+              Ver programa
             </button>
-          </div>
-
-          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 text-sm text-slate-500 font-medium border-t border-slate-100 pt-8 sm:pt-10">
-            <span className="flex items-center text-slate-700">
-              <div className="w-8 h-8 rounded-full bg-green-50 flex items-center justify-center mr-3">
-                <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" /></svg>
-              </div>
-              Evidencia científica rigorosa
-            </span>
-            <span className="flex items-center text-slate-700">
-              <div className="w-8 h-8 rounded-full bg-green-50 flex items-center justify-center mr-3">
-                <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" /></svg>
-              </div>
-              Transferencia clínica directa
-            </span>
           </div>
         </div>
       </div>

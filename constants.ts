@@ -2,7 +2,7 @@
 export const CONFIG = {
   BRAND_NAME: "Estética Metabólica",
   GA_MEASUREMENT_ID: "G-XXXXXXXXXX",
-  PAYMENT_URL_PRIMARY: "https://checkout.stripe.com/p/placeholder",
+  PAYMENT_URL_PRIMARY: "https://webilution.ac-page.com/suscribircursoestetica",
   PROGRAM_PDF_URL: "/assets/programa-completo.pdf",
   SUPPORT_EMAIL: "soporte@tuorganizacion.com",
   BRAND_PRIMARY_COLOR: "#1e3a8a",
