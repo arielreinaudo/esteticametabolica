@@ -8,7 +8,7 @@ const instructors = [
     name: "Dra. Silvina Tazzo",
     specialty: "Especialista en Medicina Estética y Abordaje Metabólico",
     bio: "Referente en la integración de la fisiopatología sistémica aplicada al rejuvenecimiento no invasivo. Con amplia trayectoria en la transferencia de evidencia científica a la práctica clínica estética diaria.",
-    image: "https://picsum.photos/seed/tazzo/400/400"
+    image: "https://www.dropbox.com/scl/fi/wa3ws2uz9ceelh9h0aq30/Silvina-circle.png?rlkey=om45vrxwooa8w6k766nk8nm4u&raw=1"
   },
   {
     name: "Dra. Adriana Ortiz",

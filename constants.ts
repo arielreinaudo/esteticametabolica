@@ -1,6 +1,6 @@
 
 export const CONFIG = {
-  BRAND_NAME: "Estética Metabólica",
+  BRAND_NAME: "Estética Metabólica y Funcional",
   GA_MEASUREMENT_ID: "G-XXXXXXXXXX",
   PAYMENT_URL_PRIMARY: "https://webilution.ac-page.com/suscribircursoestetica",
   PROGRAM_PDF_URL: "/assets/programa-completo.pdf",

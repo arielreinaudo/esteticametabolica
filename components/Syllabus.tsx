@@ -1,5 +1,7 @@
 
 import React from 'react';
+import { CONFIG } from '../constants';
+import { trackEvent } from '../services/tracking';
 
 interface Module {
   number: number;
@@ -84,6 +86,11 @@ const modules: Module[] = [
 ];
 
 const Syllabus: React.FC = () => {
+  const handleBuyModule = (moduleNumber: number) => {
+    trackEvent('module_buy_click', { module: moduleNumber });
+    window.location.href = CONFIG.PAYMENT_URL_PRIMARY;
+  };
+
   return (
     <section id="contenido" className="py-24 bg-slate-50 scroll-mt-header">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -97,12 +104,12 @@ const Syllabus: React.FC = () => {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {modules.map((mod) => (
-            <div key={mod.number} className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col">
+            <div key={mod.number} className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col group">
               <div className="flex items-center justify-between mb-6">
                 <span className="text-[10px] font-black uppercase tracking-widest text-brand-primary/40 bg-brand-primary/5 px-3 py-1 rounded-full">
                   Módulo {mod.number.toString().padStart(2, '0')}
                 </span>
-                <div className="w-2 h-2 rounded-full bg-brand-accent/30"></div>
+                <div className={`w-2 h-2 rounded-full ${mod.number === 1 ? 'bg-green-400 animate-pulse' : 'bg-brand-accent/30'}`}></div>
               </div>
               
               <h3 className="text-xl font-bold text-slate-900 mb-4 leading-tight group-hover:text-brand-primary transition-colors">
@@ -116,7 +123,7 @@ const Syllabus: React.FC = () => {
                 </p>
               </div>
 
-              <div className="mt-auto">
+              <div className="flex-grow">
                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3 border-b border-slate-100 pb-2">Contenidos Clave:</p>
                 <ul className="space-y-2.5">
                   {mod.items.map((item, i) => (
@@ -128,6 +135,25 @@ const Syllabus: React.FC = () => {
                     </li>
                   ))}
                 </ul>
+              </div>
+
+              {/* Botones solicitados */}
+              <div className="mt-8">
+                {mod.number === 1 ? (
+                  <button
+                    onClick={() => handleBuyModule(mod.number)}
+                    className="w-full py-4 bg-brand-primary text-white font-black rounded-xl hover:bg-brand-accent transition-all shadow-lg shadow-brand-primary/10 active:scale-[0.97] transform uppercase tracking-widest text-sm"
+                  >
+                    COMPRAR
+                  </button>
+                ) : (
+                  <button
+                    disabled
+                    className="w-full py-4 bg-slate-100 text-slate-400 font-bold rounded-xl cursor-not-allowed uppercase tracking-widest text-[10px] border border-slate-200"
+                  >
+                    PRÓXIMAMENTE
+                  </button>
+                )}
               </div>
             </div>
           ))}

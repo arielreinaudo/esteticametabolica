@@ -37,11 +37,10 @@ const Outcomes: React.FC = () => {
             <div className="absolute -inset-4 bg-slate-100 rounded-[3rem] -rotate-2 -z-10"></div>
             <div className="bg-white p-4 rounded-[2.5rem] border border-slate-200 shadow-2xl overflow-hidden">
               <div className="aspect-[4/5] bg-slate-200 rounded-[2rem] overflow-hidden relative group">
-                {/* Usamos la imagen de estética/textura proporcionada */}
                 <img 
-                  src="https://raw.githubusercontent.com/stackblitz/stackblitz-images/main/estetica-textura.png" 
-                  alt="Textura dérmica y estetica avanzada" 
-                  className="object-cover w-full h-full transition-all duration-700" 
+                  src="https://www.dropbox.com/scl/fi/ujmxc6vr11q2o9xn1qur8/estetica-x-site.jpg?rlkey=k30t8sfykhuqcqiip4xael49t&raw=1" 
+                  alt="Textura dérmica y estética avanzada" 
+                  className="object-cover w-full h-full transition-all duration-700 group-hover:scale-105" 
                   onError={(e) => {
                     (e.target as HTMLImageElement).src = "https://picsum.photos/seed/clinica-prof/800/1000";
                   }}
