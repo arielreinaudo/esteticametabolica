@@ -7,13 +7,13 @@ const instructors = [
   {
     name: "Dra. Silvina Tazzo",
     specialty: "Especialista en Medicina Estética y Abordaje Metabólico",
-    bio: "Referente en la integración de la fisiopatología sistémica aplicada al rejuvenecimiento no invasivo. Con amplia trayectoria en la transferencia de evidencia científica a la práctica clínica estética diaria.",
+    bio: "Médica (UNR) con 21 años de trayectoria, especializada en Geriatría y Medicina Estética, con alta formación en Rejuvenecimiento Facial (UBA). Integra clínica, estética avanzada y enfoque de longevidad saludable, priorizando resultados naturales, seguridad y excelencia en la atención.",
     image: "https://www.dropbox.com/scl/fi/wa3ws2uz9ceelh9h0aq30/Silvina-circle.png?rlkey=om45vrxwooa8w6k766nk8nm4u&raw=1"
   },
   {
     name: "Dra. Adriana Ortiz",
     specialty: "Especialista en Medicina Funcional y Nutrición Clínica",
-    bio: "Experta en el manejo del eje neuroinmune-endocrino y su impacto en la salud dérmica. Dedicada a la formación de profesionales en protocolos de suplementación y diagnóstico funcional avanzado.",
+    bio: "Médica Clínica (UNR) con 25 años de trayectoria y formación en Argentina y EE.UU. Integra Medicina Metabólica-Funcional con Medicina Tradicional China, Homeopatía, PsicoNeuroAcupuntura y Nutrición. Licenciada en ambos países, con enfoque preventivo y de precisión para optimizar salud y bienestar desde una visión integrativa.",
     image: "https://www.dropbox.com/scl/fi/cxs7w2sk1cy1jfry799cu/2.png?rlkey=9rtfshipxgdfz8cc75y5imla1&raw=1" 
   }
 ];
