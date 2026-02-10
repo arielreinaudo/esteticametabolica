@@ -27,7 +27,7 @@ const ModuleFormat: React.FC = () => {
 
             <div className="grid md:grid-cols-2 gap-8 pt-8 border-t border-slate-200">
               <div>
-                <h4 className="font-bold text-slate-900 mb-3">Pre-trabajo Asincrónico</h4>
+                <h4 className="font-bold text-slate-900 mb-3">Entregables por semana</h4>
                 <ul className="text-sm text-slate-600 space-y-2">
                   <li className="flex items-center">
                     <svg className="w-4 h-4 mr-2 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" /></svg>
@@ -35,7 +35,7 @@ const ModuleFormat: React.FC = () => {
                   </li>
                   <li className="flex items-center">
                     <svg className="w-4 h-4 mr-2 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" /></svg>
-                    Microvideo/audio (10–12 min)
+                    Audiolectura
                   </li>
                   <li className="flex items-center">
                     <svg className="w-4 h-4 mr-2 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" /></svg>
@@ -44,11 +44,13 @@ const ModuleFormat: React.FC = () => {
                 </ul>
               </div>
               <div>
-                <h4 className="font-bold text-slate-900 mb-3">Evaluación (Obligatoria)</h4>
+                <h4 className="font-bold text-slate-900 mb-3">Evaluación del módulo (Obligatoria)</h4>
                 <ul className="text-sm text-slate-600 space-y-2">
-                  <li><strong>Clases 1–2:</strong> 8–12 ítems, aprobación ≥75% (vence 24 h antes de la siguiente clase).</li>
-                  <li><strong>Clase 3:</strong> 12–15 ítems, aprobación ≥80% (vence 7 días después).</li>
-                  <li>Resultados y feedback detallado vía email.</li>
+                  <li><strong>Contenido:</strong> Examen integral de las 3 clases del módulo.</li>
+                  <li><strong>Estructura:</strong> Evaluación de 10 ítems.</li>
+                  <li><strong>Requisito:</strong> Aprobación ≥80%.</li>
+                  <li><strong>Plazo:</strong> Vence 7 días después de finalizar el bloque teórico.</li>
+                  <li>Recibirán resultados y feedback detallado del examen del módulo vía email.</li>
                 </ul>
               </div>
             </div>
