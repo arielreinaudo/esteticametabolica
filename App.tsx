@@ -13,7 +13,7 @@ import BonusGuarantee from './components/BonusGuarantee';
 import Testimonials from './components/Testimonials';
 import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
-import LeadForm from './components/LeadForm';
+import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 import CookieBanner from './components/CookieBanner';
 import PrivacyPolicy from './legal/PrivacyPolicy';
@@ -33,7 +33,7 @@ const MainLanding: React.FC = () => {
       <Testimonials />
       <Pricing />
       <FAQ />
-      <LeadForm />
+      <FinalCTA />
     </main>
   );
 };

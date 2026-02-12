@@ -13,15 +13,19 @@ const faqs = [
   },
   {
     question: "¿Cómo se obtiene la certificación?",
-    answer: "Se requiere la aprobación de las evaluaciones post-clase y una asistencia mínima del 75% a las sesiones sincrónicas o visionado de diferidos."
+    answer: "Se obtiene exclusivamente al aprobar el test final del módulo con una calificación mínima del 80%."
   },
   {
     question: "¿Hay tutoría personalizada?",
-    answer: "Contamos con un canal de soporte vía email y una sesión dedicada exclusivamente a Q&A clínico al finalizar cada módulo."
+    answer: "No se ofrecen tutorías personalizadas individuales. Sin embargo, las dudas se evacúan a través de un canal y un grupo de WhatsApp activo durante el mes del módulo, además de la sesión en vivo dedicada exclusivamente a Q&A clínico al finalizar cada bloque."
+  },
+  {
+    question: "¿Cómo funciona el soporte durante el módulo?",
+    answer: "El soporte durante el módulo se brinda principalmente a través de un espacio exclusivo de WhatsApp para alumnos, donde podés enviar tus dudas y recibir respuestas dentro de tiempos definidos por el equipo docente. Para consultas que requieran mayor contexto o detalle, utilizaremos un Google Form que permite ordenar la información y responder de manera más precisa. Las respuestas relevantes se consolidarán en una sección de Preguntas Frecuentes del módulo para beneficio de todos."
   },
   {
     question: "¿Aceptan pagos internacionales?",
-    answer: "Sí, procesamos pagos vía PayPal, aceptando la mayoría de tarjetas de crédito y débito internacionales, además de saldo en cuenta PayPal."
+    answer: "Sí, procesamos pagos vía PayPal, aceptando la mayoría de tarjetas de crédito y débito internacionales."
   },
   {
     question: "¿El material es descargable?",

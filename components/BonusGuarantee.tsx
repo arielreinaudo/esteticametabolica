@@ -34,7 +34,7 @@ const BonusGuarantee: React.FC = () => {
             <h3 className="text-2xl font-bold text-slate-900 mb-4">Garantía Profesional</h3>
             <div className="text-slate-600 text-sm space-y-3">
               <p><strong>Ventana:</strong> Hasta 24 h posteriores a la Clase 1 del primer módulo.</p>
-              <p><strong>Condición:</strong> Es requisito haber asistido a la clase en vivo (o visto la grabación completa) y haber enviado el test post-clase correspondiente.</p>
+              <p><strong>Condición:</strong> Es requisito haber asistido a la clase en vivo (o visto la grabación completa).</p>
               <p><strong>Alternativa:</strong> En caso de no poder continuar por motivos de fuerza mayor, se permite un cambio de cohorte único sin costo adicional.</p>
               <p><strong>Exclusiones:</strong> La garantía queda anulada si el alumno ha descargado el pack completo de recursos o ha asistido a más de una clase en vivo.</p>
               <p><strong>Respuesta:</strong> Todas las solicitudes serán procesadas en un máximo de 72 h hábiles.</p>

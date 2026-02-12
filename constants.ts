@@ -1,8 +1,9 @@
 
+// Fix: Added missing '=' in the CONFIG constant declaration
 export const CONFIG = {
   BRAND_NAME: "Estética Metabólica y Funcional",
   GA_MEASUREMENT_ID: "G-XXXXXXXXXX",
-  PAYMENT_URL_PRIMARY: "https://webilution.ac-page.com/suscribircursoestetica",
+  PAYMENT_URL_PRIMARY: "https://webilution.ac-page.com/suscribircursoestetica?test=true",
   PROGRAM_PDF_URL: "/assets/programa-completo.pdf",
   SUPPORT_EMAIL: "soporte@tuorganizacion.com",
   BRAND_PRIMARY_COLOR: "#1e3a8a",

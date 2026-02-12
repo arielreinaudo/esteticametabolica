@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
           <div className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium leading-5 text-brand-primary bg-brand-primary/5 border border-brand-primary/10 mb-8">
-            <span className="mr-2">Nuevo Cohorte 2024</span>
+            <span className="mr-2">Nuevo Cohorte 2026</span>
             <span className="h-4 w-px bg-brand-primary/20 mr-2"></span>
             <span className="font-bold">Inscripciones Abiertas</span>
           </div>
