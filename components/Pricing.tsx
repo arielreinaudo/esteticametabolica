@@ -3,76 +3,190 @@ import React from 'react';
 import { trackEvent } from '../services/tracking';
 import { CONFIG } from '../constants';
 
+interface PricingPlan {
+  id: string;
+  badge: string;
+  title: string;
+  subtitle: string;
+  price: string;
+  originalPrice?: string;
+  savings?: string;
+  condition?: string;
+  features: string[];
+  ctaText: string;
+  highlight?: boolean;
+}
+
+const plans: PricingPlan[] = [
+  {
+    id: 'plan_oro',
+    badge: 'INSCRIPCIÓN ORO',
+    title: 'Inversión',
+    subtitle: 'Acceso completo al módulo y recursos exclusivos',
+    price: '450',
+    condition: 'Precio por módulo (compra individual)',
+    features: [
+      "Acceso a la clase en vivo del módulo",
+      "Acceso a la grabación del módulo",
+      "Material visual descargable (mapas y esquemas)",
+      "SOPs del módulo (procedimientos estandarizados)",
+      "Checklists clínicos del módulo (consulta y seguimiento)",
+      "Guías de evaluación y priorización de hipótesis",
+      "Protocolos aplicables a consulta estética",
+      "Guías para comunicación y adherencia del paciente",
+      "Acceso a comunidad profesional del programa",
+      "Soporte por WhatsApp durante el mes",
+      "Certificado del módulo"
+    ],
+    ctaText: 'Matricularme Ahora'
+  },
+  {
+    id: 'plan_trimestral',
+    badge: 'PACK TRIMESTRAL',
+    title: 'Inversión',
+    subtitle: '3 módulos con ahorro y prioridad de cupo',
+    price: '1.215',
+    originalPrice: '1.350',
+    savings: 'Ahorra 135 USD (10%)',
+    condition: 'Ahorro aplicado al comprar 3 módulos juntos',
+    features: [
+      "Acceso a las 3 clases en vivo (1 por módulo)",
+      "Acceso a las grabaciones de los 3 módulos",
+      "Material visual descargable por módulo",
+      "SOPs y checklists por módulo",
+      "Guías de evaluación y priorización por módulo",
+      "Protocolos aplicables a consulta estética por módulo",
+      "Comunidad profesional del programa",
+      "Soporte por WhatsApp durante cada mes activo",
+      "Certificados de cada módulo"
+    ],
+    ctaText: 'Reservar Pack Trimestral'
+  },
+  {
+    id: 'plan_completo',
+    badge: 'PROGRAMA COMPLETO',
+    title: 'Inversión',
+    subtitle: 'Acceso asegurado a los 12 módulos con mayor ahorro',
+    price: '4.320',
+    originalPrice: '5.400',
+    savings: 'Ahorra 1.080 USD (20%)',
+    condition: 'Ahorro aplicado al abonar el programa completo',
+    features: [
+      "Acceso a todas las clases en vivo (12 módulos)",
+      "Acceso a todas las grabaciones del programa",
+      "Material visual descargable por módulo",
+      "SOPs y checklists por módulo",
+      "Guías de evaluación y priorización por módulo",
+      "Protocolos aplicables a consulta estética por módulo",
+      "Comunidad profesional del programa",
+      "Soporte por WhatsApp durante cada mes activo",
+      "Certificados por módulo",
+      "Certificación final del programa (si corresponde)"
+    ],
+    ctaText: 'Acceder al Programa Completo',
+    highlight: true
+  }
+];
+
 const Pricing: React.FC = () => {
-  const handlePricingSelect = (plan: string) => {
-    trackEvent('pricing_select', { plan });
+  const handlePricingSelect = (planId: string) => {
+    trackEvent('pricing_select', { plan: planId });
     window.location.href = CONFIG.PAYMENT_URL_PRIMARY;
   };
 
-  const benefits = [
-    "Acceso a la clase en vivo del módulo",
-    "Acceso a la grabación del módulo",
-    "Material visual descargable (mapas y esquemas)",
-    "SOPs del módulo (procedimientos estandarizados)",
-    "Checklists clínicos del módulo (consulta y seguimiento)",
-    "Guías de evaluación y priorización de hipótesis",
-    "Protocolos aplicables a consulta estética",
-    "Guías para comunicación y adherencia del paciente",
-    "Acceso a comunidad profesional del programa",
-    "Soporte por WhatsApp durante el mes",
-    "Certificado del módulo"
-  ];
-
   return (
-    <section id="precios" className="py-24 bg-white scroll-mt-header">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="mb-16">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Inversión en Excelencia Clínica</h2>
+    <section id="precios" className="py-24 bg-slate-50 scroll-mt-header">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Planes de Inversión</h2>
           <div className="w-20 h-1.5 bg-brand-primary mx-auto mt-6 rounded-full"></div>
           <p className="mt-8 text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed font-medium">
-            Acceda a la formación más completa en medicina metabólica aplicada con un plan de pago diseñado para su crecimiento profesional.
+            Seleccione la modalidad que mejor se adapte a su planificación profesional y acceda a la formación líder en medicina estética metabólica.
           </p>
         </div>
         
-        <div className="max-w-lg mx-auto">
-          <div className="bg-white border-2 border-brand-primary p-8 sm:p-12 rounded-[2.5rem] relative shadow-2xl shadow-brand-primary/10 transition-transform hover:scale-[1.02] duration-300">
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-brand-primary text-white text-xs font-black px-6 py-2 rounded-full uppercase tracking-[0.2em] shadow-lg">
-              Inscripción Oro
-            </div>
-            
-            <h3 className="text-2xl font-bold text-slate-900 mb-2">Inversión</h3>
-            <p className="text-slate-500 font-medium mb-10">Acceso completo al módulo y recursos exclusivos</p>
-            
-            <div className="flex items-center justify-center gap-2 mb-10">
-              <span className="text-5xl sm:text-6xl font-black text-brand-primary tracking-tighter">450</span>
-              <div className="text-left">
-                <p className="text-xl font-bold text-brand-primary leading-none">USD</p>
-                <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mt-1 italic">Iva incluido</p>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+          {plans.map((plan) => (
+            <div 
+              key={plan.id}
+              className={`bg-white border-2 rounded-[2.5rem] p-8 flex flex-col h-full transition-all duration-300 hover:shadow-2xl ${
+                plan.highlight 
+                ? 'border-brand-primary shadow-xl shadow-brand-primary/10 relative scale-105 z-10' 
+                : 'border-slate-200 shadow-sm hover:border-brand-primary/30'
+              }`}
+            >
+              <div className="text-center mb-8">
+                <span className={`inline-block px-4 py-1.5 rounded-full text-[10px] font-black tracking-widest uppercase mb-6 ${
+                  plan.highlight ? 'bg-brand-primary text-white' : 'bg-slate-100 text-slate-500'
+                }`}>
+                  {plan.badge}
+                </span>
+                
+                <h3 className="text-xl font-bold text-slate-900 mb-1">{plan.title}</h3>
+                <p className="text-slate-500 text-xs font-medium mb-6 px-4">{plan.subtitle}</p>
+                
+                <div className="flex flex-col items-center justify-center min-h-[100px]">
+                  {plan.originalPrice && (
+                    <div className="flex items-center gap-3 mb-1">
+                      <span className="text-slate-400 line-through text-lg font-bold">
+                        {plan.originalPrice} USD
+                      </span>
+                      {plan.savings && (
+                        <span className="bg-green-100 text-green-700 text-[10px] font-black px-2 py-0.5 rounded-md uppercase">
+                          {plan.savings}
+                        </span>
+                      )}
+                    </div>
+                  )}
+                  
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-4xl sm:text-5xl font-black text-brand-primary tracking-tighter">{plan.price}</span>
+                    <span className="text-lg font-bold text-brand-primary uppercase">USD</span>
+                  </div>
+                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1 italic">Iva incluido</p>
+                </div>
+
+                {plan.condition && (
+                  <p className="mt-4 text-xs font-semibold text-slate-600 italic bg-slate-50 py-2 px-4 rounded-lg inline-block">
+                    {plan.condition}
+                  </p>
+                )}
+              </div>
+
+              <div className="space-y-3 mb-10 text-left flex-grow bg-slate-50/50 p-6 rounded-2xl border border-slate-100">
+                {plan.features.map((feature, i) => (
+                  <div key={i} className="flex items-start text-slate-700 font-semibold text-xs leading-tight">
+                    <svg className="w-4 h-4 mr-3 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>{feature}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-auto pt-4 text-center">
+                <button
+                  onClick={() => handlePricingSelect(plan.id)}
+                  className={`w-full py-4 px-6 rounded-2xl text-sm font-black transition-all duration-300 transform active:scale-95 shadow-lg ${
+                    plan.highlight
+                    ? 'bg-brand-primary text-white hover:bg-brand-accent shadow-brand-primary/20'
+                    : 'bg-white border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white shadow-brand-primary/10'
+                  }`}
+                >
+                  {plan.ctaText}
+                </button>
+                <p className="mt-4 text-[10px] text-slate-400 font-medium">
+                  Pago seguro procesado vía PayPal &copy;
+                </p>
               </div>
             </div>
-
-            <div className="space-y-3.5 mb-12 text-left bg-slate-50 p-6 rounded-2xl border border-slate-100">
-              {benefits.map((item, i) => (
-                <div key={i} className="flex items-start text-slate-700 font-semibold text-sm leading-tight">
-                  <svg className="w-5 h-5 mr-3 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
-
-            <button
-              onClick={() => handlePricingSelect('full_payment_450')}
-              className="w-full py-5 bg-brand-primary text-white text-lg font-black rounded-2xl hover:bg-brand-accent shadow-xl shadow-brand-primary/20 transition-all duration-300 transform active:scale-95"
-            >
-              Matricularme Ahora
-            </button>
-            
-            <p className="mt-6 text-xs text-slate-400 font-medium">
-              Pago seguro procesado vía PayPal &copy;
-            </p>
-          </div>
+          ))}
+        </div>
+        
+        <div className="mt-16 text-center max-w-2xl mx-auto">
+          <p className="text-xs text-slate-400 leading-relaxed font-medium">
+            * Al seleccionar cualquier plan, será redirigido a nuestro portal de inscripción segura. Si requiere una factura corporativa o tiene dudas sobre los métodos de pago, por favor contáctenos a través de los canales de soporte.
+          </p>
         </div>
       </div>
     </section>
