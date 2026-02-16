@@ -6,7 +6,7 @@ import { CONFIG } from '../constants';
 const FinalCTA: React.FC = () => {
   const handleEnrollClick = () => {
     trackEvent('cta_final_click', { type: 'enroll' });
-    window.location.href = CONFIG.PAYMENT_URL_PRIMARY;
+    window.location.href = CONFIG.PAYMENT_URL_COMPLETO;
   };
 
   return (

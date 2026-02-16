@@ -5,8 +5,11 @@ import { CONFIG } from '../constants';
 
 const Hero: React.FC = () => {
   const handlePrimaryClick = () => {
-    trackEvent('cta_hero_click', { type: 'enroll' });
-    window.location.href = CONFIG.PAYMENT_URL_PRIMARY;
+    trackEvent('cta_hero_click', { type: 'buy_intent' });
+    const element = document.getElementById('precios');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const handleSecondaryClick = () => {
@@ -36,13 +39,13 @@ const Hero: React.FC = () => {
           <div className="mt-12 flex flex-col sm:flex-row justify-center gap-4 px-4 sm:px-0">
             <button
               onClick={handlePrimaryClick}
-              className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-bold rounded-lg text-white bg-brand-primary hover:bg-brand-accent shadow-xl hover:shadow-brand-primary/20 transition-all duration-300"
+              className="inline-flex items-center justify-center px-10 py-4 border border-transparent text-base font-black rounded-xl text-white bg-brand-primary hover:bg-brand-accent shadow-xl hover:shadow-brand-primary/20 transition-all duration-300 uppercase tracking-widest"
             >
-              Quiero inscribirme
+              Comprar
             </button>
             <button
               onClick={handleSecondaryClick}
-              className="inline-flex items-center justify-center px-8 py-4 border border-slate-200 text-base font-bold rounded-lg text-slate-700 bg-white hover:bg-slate-50 transition-all duration-300"
+              className="inline-flex items-center justify-center px-10 py-4 border border-slate-200 text-base font-bold rounded-xl text-slate-700 bg-white hover:bg-slate-50 transition-all duration-300"
             >
               Ver programa
             </button>

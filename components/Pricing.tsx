@@ -15,6 +15,7 @@ interface PricingPlan {
   features: string[];
   ctaText: string;
   highlight?: boolean;
+  paymentUrl: string;
 }
 
 const plans: PricingPlan[] = [
@@ -25,6 +26,7 @@ const plans: PricingPlan[] = [
     subtitle: 'Acceso completo al módulo y recursos exclusivos',
     price: '450',
     condition: 'Precio por módulo (compra individual)',
+    paymentUrl: CONFIG.PAYMENT_URL_ORO,
     features: [
       "Acceso a la clase en vivo del módulo",
       "Acceso a la grabación del módulo",
@@ -49,6 +51,7 @@ const plans: PricingPlan[] = [
     originalPrice: '1.350',
     savings: 'Ahorra 135 USD (10%)',
     condition: 'Ahorro aplicado al comprar 3 módulos juntos',
+    paymentUrl: CONFIG.PAYMENT_URL_TRIMESTRAL,
     features: [
       "Acceso a las 3 clases en vivo (1 por módulo)",
       "Acceso a las grabaciones de los 3 módulos",
@@ -71,6 +74,7 @@ const plans: PricingPlan[] = [
     originalPrice: '5.400',
     savings: 'Ahorra 1.080 USD (20%)',
     condition: 'Ahorro aplicado al abonar el programa completo',
+    paymentUrl: CONFIG.PAYMENT_URL_COMPLETO,
     features: [
       "Acceso a todas las clases en vivo (12 módulos)",
       "Acceso a todas las grabaciones del programa",
@@ -89,9 +93,9 @@ const plans: PricingPlan[] = [
 ];
 
 const Pricing: React.FC = () => {
-  const handlePricingSelect = (planId: string) => {
-    trackEvent('pricing_select', { plan: planId });
-    window.location.href = CONFIG.PAYMENT_URL_PRIMARY;
+  const handlePricingSelect = (plan: PricingPlan) => {
+    trackEvent('pricing_select', { plan: plan.id });
+    window.location.href = plan.paymentUrl;
   };
 
   return (
@@ -166,7 +170,7 @@ const Pricing: React.FC = () => {
 
               <div className="mt-auto pt-4 text-center">
                 <button
-                  onClick={() => handlePricingSelect(plan.id)}
+                  onClick={() => handlePricingSelect(plan)}
                   className={`w-full py-4 px-6 rounded-2xl text-sm font-black transition-all duration-300 transform active:scale-95 shadow-lg ${
                     plan.highlight
                     ? 'bg-brand-primary text-white hover:bg-brand-accent shadow-brand-primary/20'

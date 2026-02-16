@@ -8,10 +8,6 @@ const Header: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const handleEnrollClick = () => {
-    trackEvent('cta_header_click', { type: 'enroll' });
-  };
-
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     // Solo manejamos enlaces internos que empiezan con #
     if (href.startsWith('#')) {
@@ -59,11 +55,11 @@ const Header: React.FC = () => {
           </nav>
           <div className="flex-shrink-0 flex items-center">
             <a
-              href={CONFIG.PAYMENT_URL_PRIMARY}
-              onClick={handleEnrollClick}
-              className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 border border-transparent text-xs sm:text-sm font-medium rounded-md shadow-sm text-white bg-brand-primary hover:bg-brand-accent focus:outline-none transition-all whitespace-nowrap"
+              href="#precios"
+              onClick={(e) => handleNavClick(e, '#precios')}
+              className="inline-flex items-center px-3 py-1.5 sm:px-6 sm:py-2.5 border border-transparent text-xs sm:text-sm font-black rounded-xl shadow-sm text-white bg-brand-primary hover:bg-brand-accent focus:outline-none transition-all whitespace-nowrap uppercase tracking-wider"
             >
-              Inscribirme
+              Comprar
             </a>
           </div>
         </div>

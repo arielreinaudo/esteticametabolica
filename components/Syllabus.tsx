@@ -88,7 +88,10 @@ const modules: Module[] = [
 const Syllabus: React.FC = () => {
   const handleBuyModule = (moduleNumber: number) => {
     trackEvent('module_buy_click', { module: moduleNumber });
-    window.location.href = CONFIG.PAYMENT_URL_PRIMARY;
+    const element = document.getElementById('precios');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
