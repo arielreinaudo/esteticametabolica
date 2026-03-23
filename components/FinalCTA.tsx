@@ -5,8 +5,11 @@ import { CONFIG } from '../constants';
 
 const FinalCTA: React.FC = () => {
   const handleEnrollClick = () => {
-    trackEvent('cta_final_click', { type: 'enroll' });
-    window.location.href = CONFIG.PAYMENT_URL_COMPLETO;
+    trackEvent('cta_final_click', { type: 'scroll_to_pricing' });
+    const element = document.getElementById('precios');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -29,7 +32,7 @@ const FinalCTA: React.FC = () => {
             onClick={handleEnrollClick}
             className="group relative inline-flex items-center justify-center px-10 py-5 bg-brand-primary text-white text-xl font-black rounded-2xl hover:bg-brand-accent shadow-2xl shadow-brand-primary/20 transition-all duration-300 transform hover:scale-105 active:scale-95"
           >
-            <span className="relative z-10">Inscribirme Ahora</span>
+            <span className="relative z-10">Ver Planes e Inscribirme</span>
             <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity rounded-2xl"></div>
           </button>
         </div>

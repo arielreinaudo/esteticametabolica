@@ -18,6 +18,5 @@ export const NAVIGATION = [
   { name: 'Contenido', href: '#contenido' },
   { name: 'Metodología', href: '#metodologia' },
   { name: 'Docentes', href: '#docentes' },
-  { name: 'Precios', href: '#precios' },
   { name: 'FAQ', href: '#faq' },
 ];

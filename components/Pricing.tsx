@@ -20,17 +20,16 @@ interface PricingPlan {
 
 const plans: PricingPlan[] = [
   {
-    id: 'plan_oro',
-    badge: 'INSCRIPCIÓN ORO',
+    id: 'plan_modulo',
+    badge: 'INSCRIPCIÓN POR MÓDULO',
     title: 'Inversión',
     subtitle: 'Acceso completo al módulo y recursos exclusivos',
-    price: '450',
-    condition: 'Precio por módulo (compra individual)',
+    price: '320',
+    condition: 'Pago único por módulo',
     paymentUrl: CONFIG.PAYMENT_URL_ORO,
     features: [
-      "Acceso a la clase en vivo del módulo",
-      "Acceso a la grabación del módulo",
-      "Material visual descargable (mapas y esquemas)",
+      "Acceso a las clases en vivo del módulo (3 + Q&A)",
+      "Acceso a la grabaciones del módulo (3 + Q&A)",
       "SOPs del módulo (procedimientos estandarizados)",
       "Checklists clínicos del módulo (consulta y seguimiento)",
       "Guías de evaluación y priorización de hipótesis",
@@ -40,54 +39,7 @@ const plans: PricingPlan[] = [
       "Soporte por WhatsApp durante el mes",
       "Certificado del módulo"
     ],
-    ctaText: 'Matricularme Ahora'
-  },
-  {
-    id: 'plan_trimestral',
-    badge: 'PACK TRIMESTRAL',
-    title: 'Inversión',
-    subtitle: '3 módulos con ahorro y prioridad de cupo',
-    price: '1.215',
-    originalPrice: '1.350',
-    savings: 'Ahorra 135 USD (10%)',
-    condition: 'Ahorro aplicado al comprar 3 módulos juntos',
-    paymentUrl: CONFIG.PAYMENT_URL_TRIMESTRAL,
-    features: [
-      "Acceso a las 3 clases en vivo (1 por módulo)",
-      "Acceso a las grabaciones de los 3 módulos",
-      "Material visual descargable por módulo",
-      "SOPs y checklists por módulo",
-      "Guías de evaluación y priorización por módulo",
-      "Protocolos aplicables a consulta estética por módulo",
-      "Comunidad profesional del programa",
-      "Soporte por WhatsApp durante cada mes activo",
-      "Certificados de cada módulo"
-    ],
-    ctaText: 'Reservar Pack Trimestral'
-  },
-  {
-    id: 'plan_completo',
-    badge: 'PROGRAMA COMPLETO',
-    title: 'Inversión',
-    subtitle: 'Acceso asegurado a los 12 módulos con mayor ahorro',
-    price: '4.320',
-    originalPrice: '5.400',
-    savings: 'Ahorra 1.080 USD (20%)',
-    condition: 'Ahorro aplicado al abonar el programa completo',
-    paymentUrl: CONFIG.PAYMENT_URL_COMPLETO,
-    features: [
-      "Acceso a todas las clases en vivo (12 módulos)",
-      "Acceso a todas las grabaciones del programa",
-      "Material visual descargable por módulo",
-      "SOPs y checklists por módulo",
-      "Guías de evaluación y priorización por módulo",
-      "Protocolos aplicables a consulta estética por módulo",
-      "Comunidad profesional del programa",
-      "Soporte por WhatsApp durante cada mes activo",
-      "Certificados por módulo",
-      "Certificación final del programa (si corresponde)"
-    ],
-    ctaText: 'Acceder al Programa Completo',
+    ctaText: 'Matricularme Ahora',
     highlight: true
   }
 ];
@@ -105,17 +57,17 @@ const Pricing: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Planes de Inversión</h2>
           <div className="w-20 h-1.5 bg-brand-primary mx-auto mt-6 rounded-full"></div>
           <p className="mt-8 text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed font-medium">
-            Seleccione la modalidad que mejor se adapte a su planificación profesional y acceda a la formación líder en medicina estética metabólica.
+            Acceda a la formación líder en medicina estética metabólica con nuestra modalidad de pago por módulo.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+        <div className="max-w-lg mx-auto">
           {plans.map((plan) => (
             <div 
               key={plan.id}
               className={`bg-white border-2 rounded-[2.5rem] p-8 flex flex-col h-full transition-all duration-300 hover:shadow-2xl ${
                 plan.highlight 
-                ? 'border-brand-primary shadow-xl shadow-brand-primary/10 relative scale-105 z-10' 
+                ? 'border-brand-primary shadow-xl shadow-brand-primary/10 relative z-10' 
                 : 'border-slate-200 shadow-sm hover:border-brand-primary/30'
               }`}
             >
