@@ -30,9 +30,9 @@ const FinalCTA: React.FC = () => {
         <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
           <button
             onClick={handleEnrollClick}
-            className="group relative inline-flex items-center justify-center px-10 py-5 bg-brand-primary text-white text-xl font-black rounded-2xl hover:bg-brand-accent shadow-2xl shadow-brand-primary/20 transition-all duration-300 transform hover:scale-105 active:scale-95"
+            className="group relative inline-flex items-center justify-center px-10 py-4 bg-brand-primary text-white text-xl font-black rounded-2xl hover:bg-brand-accent shadow-2xl shadow-brand-primary/20 transition-all duration-300 transform hover:scale-105 active:scale-95"
           >
-            <span className="relative z-10">Ver Planes e Inscribirme</span>
+            <span className="relative z-10">Comprar</span>
             <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity rounded-2xl"></div>
           </button>
         </div>

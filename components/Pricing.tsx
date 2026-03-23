@@ -39,7 +39,7 @@ const plans: PricingPlan[] = [
       "Soporte por WhatsApp durante el mes",
       "Certificado del módulo"
     ],
-    ctaText: 'Matricularme Ahora',
+    ctaText: 'Comprar',
     highlight: true
   }
 ];
