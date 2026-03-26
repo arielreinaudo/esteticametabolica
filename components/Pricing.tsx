@@ -51,7 +51,7 @@ const Pricing: React.FC = () => {
   };
 
   return (
-    <section id="precios" className="py-24 bg-slate-50 scroll-mt-header">
+    <section id="precios" className="pt-12 pb-24 bg-slate-50 scroll-mt-header">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Planes de Inversión</h2>

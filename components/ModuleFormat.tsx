@@ -31,25 +31,37 @@ const ModuleFormat: React.FC = () => {
 
             <div className="grid md:grid-cols-2 gap-8 pt-8 border-t border-slate-200">
               <div>
-                <h4 className="font-bold text-slate-900 mb-4">Entregables por semana</h4>
+                <h4 className="font-bold text-slate-900 mb-4">Entregables por módulo</h4>
                 <ul className="text-sm text-slate-600 space-y-3">
                   <li className="flex items-start">
                     <svg className="w-5 h-5 mr-3 text-brand-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span>Microlectura PDF</span>
+                    <span>Microlecturas PDF</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="w-5 h-5 mr-3 text-brand-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span>Audiolectura MP3</span>
+                    <span>Audiolecturas MP3</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="w-5 h-5 mr-3 text-brand-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span className="leading-tight">Auto-test breve (opcional, 10 ítems) formulario con resultado inmediato</span>
+                    <span>Papers científicos usados en el módulo</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 mr-3 text-brand-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span>Planillas para uso en clínica</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 mr-3 text-brand-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span>Auto-test breve (opcional) con resultado</span>
                   </li>
                 </ul>
               </div>
