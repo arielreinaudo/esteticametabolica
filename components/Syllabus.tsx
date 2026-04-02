@@ -109,9 +109,16 @@ const Syllabus: React.FC = () => {
           {modules.map((mod) => (
             <div key={mod.number} className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col group">
               <div className="flex items-center justify-between mb-6">
-                <span className="text-[10px] font-black uppercase tracking-widest text-brand-primary/40 bg-brand-primary/5 px-3 py-1 rounded-full">
-                  Módulo {mod.number.toString().padStart(2, '0')}
-                </span>
+                <div className="flex items-center gap-3">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-brand-primary/40 bg-brand-primary/5 px-3 py-1 rounded-full">
+                    Módulo {mod.number.toString().padStart(2, '0')}
+                  </span>
+                  {mod.number === 1 && (
+                    <span className="text-[10px] font-bold text-green-600 uppercase tracking-widest">
+                      Inicio 8 Julio 2026
+                    </span>
+                  )}
+                </div>
                 <div className={`w-2 h-2 rounded-full ${mod.number === 1 ? 'bg-green-400 animate-pulse' : 'bg-brand-accent/30'}`}></div>
               </div>
               

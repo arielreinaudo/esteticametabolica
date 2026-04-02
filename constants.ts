@@ -8,7 +8,7 @@ export const CONFIG = {
   PAYMENT_URL_TRIMESTRAL: "https://webilution.ac-page.com/compracursoesteticatrimestre",
   PAYMENT_URL_COMPLETO: "https://webilution.ac-page.com/compracursoesteticaprogramacompleto",
   PROGRAM_PDF_URL: "/assets/programa-completo.pdf",
-  SUPPORT_EMAIL: "soporte@tuorganizacion.com",
+  SUPPORT_EMAIL: "info@cursoesteticafuncional.com",
   BRAND_PRIMARY_COLOR: "#1e3a8a",
   WEBHOOK_URL: "", // Opcional para Zapier/Make
 };

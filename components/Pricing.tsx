@@ -22,11 +22,7 @@ const plans: PricingPlan[] = [
   {
     id: 'plan_modulo',
     badge: 'INSCRIPCIÓN POR MÓDULO',
-    title: 'Inversión',
-    subtitle: 'Acceso completo al módulo y recursos exclusivos',
-    price: '320',
-    condition: 'Pago único por módulo',
-    paymentUrl: CONFIG.PAYMENT_URL_ORO,
+    title: 'Inicio Julio 8 2026',
     features: [
       "Acceso a las clases en vivo del módulo (3 + Q&A)",
       "Acceso a la grabaciones del módulo (3 + Q&A)",
@@ -40,7 +36,10 @@ const plans: PricingPlan[] = [
       "Certificado del módulo"
     ],
     ctaText: 'Comprar',
-    highlight: true
+    highlight: true,
+    paymentUrl: CONFIG.PAYMENT_URL_ORO,
+    subtitle: '',
+    price: '320'
   }
 ];
 
@@ -78,8 +77,7 @@ const Pricing: React.FC = () => {
                   {plan.badge}
                 </span>
                 
-                <h3 className="text-xl font-bold text-slate-900 mb-1">{plan.title}</h3>
-                <p className="text-slate-500 text-xs font-medium mb-6 px-4">{plan.subtitle}</p>
+                <h3 className="text-xl font-bold text-green-600 mb-6">{plan.title}</h3>
                 
                 <div className="flex flex-col items-center justify-center min-h-[100px]">
                   {plan.originalPrice && (
@@ -101,12 +99,6 @@ const Pricing: React.FC = () => {
                   </div>
                   <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1 italic">Iva incluido</p>
                 </div>
-
-                {plan.condition && (
-                  <p className="mt-4 text-xs font-semibold text-slate-600 italic bg-slate-50 py-2 px-4 rounded-lg inline-block">
-                    {plan.condition}
-                  </p>
-                )}
               </div>
 
               <div className="space-y-3 mb-10 text-left flex-grow bg-slate-50/50 p-6 rounded-2xl border border-slate-100">
