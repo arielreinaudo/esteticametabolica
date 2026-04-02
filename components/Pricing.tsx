@@ -52,14 +52,6 @@ const Pricing: React.FC = () => {
   return (
     <section id="precios" className="pt-12 pb-24 bg-slate-50 scroll-mt-header">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Planes de Inversión</h2>
-          <div className="w-20 h-1.5 bg-brand-primary mx-auto mt-6 rounded-full"></div>
-          <p className="mt-8 text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed font-medium">
-            Acceda a la formación líder en medicina estética metabólica con nuestra modalidad de pago por módulo.
-          </p>
-        </div>
-        
         <div className="max-w-lg mx-auto">
           {plans.map((plan) => (
             <div 
