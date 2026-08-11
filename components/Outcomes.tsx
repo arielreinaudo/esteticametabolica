@@ -38,8 +38,8 @@ const Outcomes: React.FC = () => {
             <div className="bg-white p-4 rounded-[2.5rem] border border-slate-200 shadow-2xl overflow-hidden">
               <div className="aspect-[4/5] bg-slate-200 rounded-[2rem] overflow-hidden relative group">
                 <img 
-                  src="https://www.dropbox.com/scl/fi/ujmxc6vr11q2o9xn1qur8/estetica-x-site.jpg?rlkey=k30t8sfykhuqcqiip4xael49t&raw=1" 
-                  alt="Textura dérmica y estética avanzada" 
+                  src="https://www.dropbox.com/scl/fi/f35cvx1u6uqjfz01hokga/Medicina-Metab-lica-y-Funcional.jpg?rlkey=4v54p82dg621zwp9god8u8f35&raw=1" 
+                  alt="Medicina Metabólica y Funcional" 
                   className="object-cover w-full h-full transition-all duration-700 group-hover:scale-105" 
                   onError={(e) => {
                     (e.target as HTMLImageElement).src = "https://picsum.photos/seed/clinica-prof/800/1000";
