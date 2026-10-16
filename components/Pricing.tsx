@@ -22,7 +22,7 @@ const plans: PricingPlan[] = [
   {
     id: 'plan_modulo',
     badge: 'INSCRIPCIÓN POR MÓDULO',
-    title: 'Inicio Julio 8 2026',
+    title: 'Iniciamos pronto',
     features: [
       "Acceso a las clases en vivo del módulo (3 + Q&A)",
       "Acceso a la grabaciones del módulo (3 + Q&A)",
@@ -39,7 +39,7 @@ const plans: PricingPlan[] = [
     highlight: true,
     paymentUrl: CONFIG.PAYMENT_URL_ORO,
     subtitle: '',
-    price: '320'
+    price: '450'
   }
 ];
 

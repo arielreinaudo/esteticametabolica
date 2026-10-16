@@ -115,7 +115,7 @@ const Syllabus: React.FC = () => {
                   </span>
                   {mod.number === 1 && (
                     <span className="text-[10px] font-bold text-green-600 uppercase tracking-widest">
-                      Inicio 8 Julio 2026
+                      Iniciamos pronto
                     </span>
                   )}
                 </div>
